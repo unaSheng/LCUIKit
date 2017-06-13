@@ -51,14 +51,15 @@
     CGSize titleSize = [self titleRectForContentRect:contentRect].size;
     CGSize imageSize = [self imageRectForContentRect:contentRect].size;
     
-    float halfWidth = (titleSize.width + imageSize.width)/2;
-    float halfHeight = (titleSize.height + imageSize.height)/2;
+    int halfWidth = (titleSize.width + imageSize.width)/2;
+    int halfHeight = (titleSize.height + imageSize.height)/2;
     
-    float topInset = MIN(halfHeight, titleSize.height);
-    float leftInset = (titleSize.width - imageSize.width)>0?(titleSize.width - imageSize.width)/2:0;
-    float bottomInset = (titleSize.height - imageSize.height)>0?(titleSize.height - imageSize.height)/2:0;
-    float rightInset = MIN(halfWidth, titleSize.width);
+    int topInset = MIN(halfHeight, titleSize.height);
+    int leftInset = (titleSize.width - imageSize.width)>0?(titleSize.width - imageSize.width)/2:0;
+    int bottomInset = (titleSize.height - imageSize.height)>0?(titleSize.height - imageSize.height)/2:0;
+    int rightInset = MIN(halfWidth, titleSize.width);
     
+
     if (isTop) {
         [self setTitleEdgeInsets:UIEdgeInsetsMake(-halfHeight-space, - halfWidth, halfHeight+space, halfWidth)];
         [self setContentEdgeInsets:UIEdgeInsetsMake(topInset+space, leftInset, -bottomInset, -rightInset)];
